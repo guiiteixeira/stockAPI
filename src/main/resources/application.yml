@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Stocks
+  datasource:
+    initialization-mode: always
+    initialize: true
+    url: jdbc:postgresql://localhost:5432/stocks
+    username: postgres
+    password: mysql
+  jpa:
+    hibernate:
+      ddl-auto: create
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
