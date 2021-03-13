@@ -77,6 +77,10 @@ public class StockService {
         final Stock stock = findByName(name).orElseThrow(
                 () -> new StockException("Stock '" + name + "' não foi encontrado.")
         );
+
+        List<Quote> quotes = quoteService.findByStock(stock);
+        quoteService.deleteAll(quotes);
+
         stockRepository.delete(stock);
     }
 }
